@@ -1,14 +1,20 @@
 package com.bridgelabz.hashtable;
 public class MainHashTable {
     public static void main(String[] args) {
-        /**
-         * static method call
-         */
-        givenASentence_WhenWordAreAddedToList_ShouldReturnWordFrequency();
+        givenASentence_WhenWordAreAddedToList_ShouldReturnParanoidFrequency();
     }
-    private static void givenASentence_WhenWordAreAddedToList_ShouldReturnWordFrequency() {
-        String sentence = "To be or not to be";
+
+    /**
+     * find frequency of word paranoid in given paragraph
+     */
+    private static void givenASentence_WhenWordAreAddedToList_ShouldReturnParanoidFrequency() {
+        String sentence = "Paranoids are not paranoid because they are paranoid "
+                + "but because they keep putting themselves "
+                + "deliberately into paranoid avoidable situations";
         MyHashTable<String, Integer> myHashMap = new MyHashTable<>();
+        /**
+         * split to spit given paragraph in array,each word of para store in seperate arrary index
+         */
         String[] words = sentence. toLowerCase().split(" ");
         for(String word : words) {
             Integer value = myHashMap.get(word);
@@ -18,8 +24,9 @@ public class MainHashTable {
                 value = value + 1;
             myHashMap.add(word, value);
         }
-        int frequency = myHashMap.get("to");
+        int frequency = myHashMap.get("paranoid");
         System.out.println(myHashMap);
-        System.out.println("Frequency of give word 'to' is " + frequency);
+        System.out.println("Frequency of give word 'paranoid' is " + frequency);
     }
+
 }
