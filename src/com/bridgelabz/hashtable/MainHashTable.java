@@ -3,7 +3,6 @@ public class MainHashTable {
     public static void main(String[] args) {
         givenASentence_WhenWordAreAddedToList_ShouldReturnParanoidFrequency();
     }
-
     /**
      * find frequency of word paranoid in given paragraph
      */
@@ -27,6 +26,13 @@ public class MainHashTable {
         int frequency = myHashMap.get("paranoid");
         System.out.println(myHashMap);
         System.out.println("Frequency of give word 'paranoid' is " + frequency);
+        /**
+         * remove word avoidable
+         */
+        myHashMap.removeKey("avoidable");
+        System.out.println("Hash Map after deleting avoidable");
+        System.out.println(myHashMap);
+
     }
 
 }
